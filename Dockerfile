@@ -4,6 +4,9 @@ FROM public.ecr.aws/amazonlinux/amazonlinux:latest
 RUN yum update -y && \
  yum install -y httpd
 
+# Set ServerName to suppress warnings
+RUN echo "a20888cff0b544f89ba1235f091d6e0f-1674497320.ap-south-1.elb.amazonaws.com" >> /etc/httpd/conf/httpd.conf
+
 ## Install apache and write hello world message
 RUN echo 'Hello World!' > /var/www/html/index.html
 
