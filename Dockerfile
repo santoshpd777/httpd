@@ -7,7 +7,7 @@ RUN yum update -y && \
 # Install apache and write hello world message
 RUN echo 'Hello World!' > /var/www/html/index.html
 
-# Configure apache
+## Configure apache
 RUN echo 'mkdir -p /var/run/httpd' >> /root/run_apache.sh && \
  echo 'mkdir -p /var/lock/httpd' >> /root/run_apache.sh && \
  echo '/usr/sbin/httpd -D FOREGROUND' >> /root/run_apache.sh && \
